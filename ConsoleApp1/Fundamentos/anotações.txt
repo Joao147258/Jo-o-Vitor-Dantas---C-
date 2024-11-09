@@ -1,0 +1,38 @@
+Problema:
+ao iniciar esse modulo tivemos problemas com o metodo main, pois como se trata de um curso teria-se muitos exercicios, logo varios arquivos, e no c os comandos tem que ficar dentro de um metodo, logo cada arquivo teria um main, oque acabaria gerando erro na depuração e impossibilitando de de fazer o exercio.
+Solução:
+ao inves de usar "Main" foi criado um metodo "Executar" em cada arquivo de exercicio e um arquivo onde os exercicios serão importados para fazer a depuração deles.
+Amostra:
+
+exercicio -> 
+namespace hello.Fundamentos
+{
+     public class Comentarios
+        {
+            
+                public static void Executar(){
+                System.Console.WriteLine();
+            
+            }
+
+            
+        }
+}
+
+importação -> 
+using hello.Fundamentos;
+
+namespace CursoCSharp {
+    class Program {
+        static void Main(string[] args) {
+            var central = new CentralDeExercicios(new Dictionary<string, Action>() {7
+            
+                {"Primeiro Programa - Fundamentos", Fundamentos.Executar},
+            
+            });
+
+            central.SelecionarEExecutar();
+        }
+    }
+}
+
